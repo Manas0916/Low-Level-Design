@@ -4,8 +4,8 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Inventory {
-    private final Map<String, Product> itemMap = new HashMap<>();
-    private final Map<String, Integer> stockMap = new HashMap<>();
+    private final Map<String, Product> itemMap = new ConcurrentHashMap<>();
+    private final Map<String, Integer> stockMap = new ConcurrentHashMap<>();
 
     public void addItem(String code, Product item, int quantity){
         itemMap.put(code, item);
