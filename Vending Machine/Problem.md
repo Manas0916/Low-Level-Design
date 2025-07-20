@@ -9,17 +9,6 @@
 1. The machine should provide an interface for restocking products and collecting money.
 1. The machine should handle exceptional scenarios, such as insufficient funds or out-of-stock products.
 
-## UML Class Diagram
-
-![](../uml-diagrams/class-diagrams/vendingmachine-class-diagram.png)
-
-## Implementations
-#### [Java Implementation](../solutions/java/src/vendingmachine/)
-#### [Python Implementation](../solutions/python/vendingmachine/)
-#### [C++ Implementation](../solutions/cpp/vendingmachine/)
-#### [C# Implementation](../solutions/csharp/vendingmachine/)
-#### [Go Implementation](../solutions/golang/vending_machine/)
-
 ## Classes, Interfaces and Enumerations
 1. The **VendingMachine.Product** class represents a product in the vending machine, with properties such as name and price.
 2. The **VendingMachine.Coin** and **Note** enums represent the different denominations of coins and notes accepted by the vending machine.
