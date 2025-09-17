@@ -27,7 +27,7 @@ public class Main {
         LocalDateTime departureTime1 = LocalDateTime.now().plusDays(1);
         LocalDateTime arrivalTime1 = departureTime1.plusHours(2);
         LocalDateTime departureTime2 = LocalDateTime.now().plusDays(3);
-        LocalDateTime arrivalTime2 = LocalDateTime.now().plusDays(5);
+        LocalDateTime arrivalTime2 = departureTime2.plusDays(5);
         Flight flight1 = airlineManagementSystem.addFlight("New York", "London", departureTime1, arrivalTime1, aircraft1.getId());
         Flight flight2 = airlineManagementSystem.addFlight("India", "London", departureTime2, arrivalTime2, aircraft2.getId());
 
