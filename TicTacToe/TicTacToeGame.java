@@ -18,7 +18,7 @@ public class TicTacToeGame {
             int row = scanner.nextInt();
             int col = scanner.nextInt();
             
-            if (!game.isGameOver()) {`
+            if (!game.isGameOver()) {
                 game.makeMove(row, col);
             }
         }
