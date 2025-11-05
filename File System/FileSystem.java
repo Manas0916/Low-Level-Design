@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public interface FileSystem {
+public interface FileSystem {
+    public void ls(String indent);
 }
