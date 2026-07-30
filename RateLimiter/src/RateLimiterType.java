@@ -1,4 +1,4 @@
-package RateLimiter;
+
 
 public enum RateLimiterType {
     TOKEN_BUCKET,
