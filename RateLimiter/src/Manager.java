@@ -19,11 +19,16 @@ public class Manager {
                 System.out.println("Cannot start - no rate limiter available");
                 return;
             }
-            if (this.rateLimiter instanceof RefillableRateLimiter refillableBucket) {
-                RefillService refillService = new RefillService(refillableBucket, 3, 1);
+            else if (this.rateLimiter instanceof Tokenbucket TokenBucket) {
+                RefillService refillService = new RefillService(TokenBucket, 3, 1);
                 refillService.startRefill();
                 System.out.println("Refill service started for " + algorithm);
-            } else {
+            }
+            else if(this.rateLimiter instanceof LeakyBucket lb) {
+                LeakService leak = new LeakService(lb, 2);
+                leak.start();
+            }
+            else {
                 System.out.println("No refill service needed for " + algorithm);
             }
 

@@ -7,4 +7,9 @@ public class Request {
         this.requestId = requestId;
         this.clientName = clientName;
     }
+
+    @Override
+    public String toString() {
+        return clientName + "-" + requestId;
+    }
 }

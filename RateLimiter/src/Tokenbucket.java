@@ -9,7 +9,7 @@ public class Tokenbucket implements RefillableRateLimiter {
         lock = new Object();
     }
 
-    public void addTokens(int count) {
+    public void addTokens(Integer count) {
         synchronized (lock) {
             this.tokensCount = Math.min(this.capacity, this.tokensCount + count);
         }
@@ -22,7 +22,7 @@ public class Tokenbucket implements RefillableRateLimiter {
     }
 
     @Override
-    public boolean allowRequest() {
+    public boolean allowRequest(Request request) {
         synchronized (lock) {
             if (this.tokensCount == 0) {
                 return false;

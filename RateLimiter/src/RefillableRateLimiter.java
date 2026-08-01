@@ -1,5 +1,5 @@
 
 
 public interface RefillableRateLimiter extends RateLimiter {
-    void addTokens(int count);
+    void addTokens(Integer count);
 }

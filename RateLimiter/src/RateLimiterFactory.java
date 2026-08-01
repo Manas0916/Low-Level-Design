@@ -5,10 +5,7 @@ public class RateLimiterFactory {
 
         return switch (type) {
             case TOKEN_BUCKET -> new Tokenbucket(10);
-            case LEAKY_BUCKET ->
-                // return new LeakyBucket(...); To be implemented
-                    throw new IllegalArgumentException(
-                            "Unsupported Algorithm : " + type);
+            case LEAKY_BUCKET -> new LeakyBucket(4, 10);
             case FIXED_WINDOW ->
                 // return new FixedWindow(...); To be implemented
                     throw new IllegalArgumentException(
