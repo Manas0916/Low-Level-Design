@@ -1,16 +1,16 @@
+package src.Client;
 
+import src.RateLimiter;
+import src.Request.Request;
 
-import java.util.Random;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
-public class Client extends  Thread {
+public class Client implements Runnable {
     private final RateLimiter rateLimiter;
     private final String name;
     private int requestId = 1;
 
-    Client(RateLimiter rateLimiter, String name) {
-        super();
-        this.setDaemon(true);
+
+    public Client(RateLimiter rateLimiter, String name) {
         this.rateLimiter = rateLimiter;
         this.name = name;
     }

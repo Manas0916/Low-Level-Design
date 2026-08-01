@@ -223,7 +223,7 @@ class PaymentProcessor {
 
 
 
-public class MyClass {
+public class Payment_system_lld {
   public static void main(String args[]) {
       
         PaymentGatewayFactory factory = new PaymentGatewayFactory();

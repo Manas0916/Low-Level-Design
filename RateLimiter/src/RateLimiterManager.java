@@ -1,12 +1,19 @@
+package src;
 
+import src.Client.Client;
+import src.Factory.RateLimiterFactory;
+import src.RateLimiterAlgorithms.LeakyBucket;
+import src.RateLimiterAlgorithms.Tokenbucket;
+import src.services.LeakService;
+import src.services.RefillService;
 
 import java.util.ArrayList;
 
-public class Manager {
+public class RateLimiterManager {
     private final RateLimiterType algorithm;
     private final  RateLimiter rateLimiter;
 
-    public Manager(RateLimiterType algorithm)
+    public RateLimiterManager(RateLimiterType algorithm)
     {
         RateLimiterFactory rateLimiterFactory = new RateLimiterFactory();
         this.algorithm = algorithm;
@@ -32,14 +39,16 @@ public class Manager {
                 System.out.println("No refill service needed for " + algorithm);
             }
 
-            ArrayList<Client> clients = new ArrayList<Client>();
+            ArrayList<Thread> clients = new ArrayList<>();
             for(int i = 0; i < 5; i ++) {
                 Client client = new Client(this.rateLimiter, "client -" + i);
-                client.start();
-                clients.add(client);
+                Thread clientThread = new Thread(client, "client-" + i);
+                clientThread.setDaemon(true);
+                clientThread.start();
+                clients.add(clientThread);
             }
 
-            for(Client client: clients) {
+            for(Thread client: clients) {
                 client.join();
             }
         } catch (InterruptedException e) {

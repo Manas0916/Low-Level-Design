@@ -1,9 +1,12 @@
+package src.RateLimiterAlgorithms;
 
+import src.RefillableRateLimiter;
+import src.Request.Request;
 
 public class Tokenbucket implements RefillableRateLimiter {
     int capacity, tokensCount;
     final Object lock;
-    Tokenbucket(int cap) {
+    public Tokenbucket(int cap) {
         this.capacity = cap;
         this.tokensCount = cap;
         lock = new Object();

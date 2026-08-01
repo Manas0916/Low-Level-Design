@@ -1,9 +1,9 @@
-
+package src.Request;
 
 public class Request {
     int requestId;
     String clientName;
-    Request(int requestId, String clientName) {
+    public Request(int requestId, String clientName) {
         this.requestId = requestId;
         this.clientName = clientName;
     }

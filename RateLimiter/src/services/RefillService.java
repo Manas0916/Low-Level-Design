@@ -1,4 +1,6 @@
+package src.services;
 
+import src.RefillableRateLimiter;
 
 import java.util.concurrent.TimeUnit;
 public class RefillService {
@@ -6,7 +8,7 @@ public class RefillService {
     int refillTokens;
     int refillInterval;
 
-    RefillService(RefillableRateLimiter bucket, int refillTokens, int refillInterval) {
+    public RefillService(RefillableRateLimiter bucket, int refillTokens, int refillInterval) {
         this.bucket = bucket;
         this.refillTokens = refillTokens;
         this.refillInterval = refillInterval;

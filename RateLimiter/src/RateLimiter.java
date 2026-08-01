@@ -1,6 +1,7 @@
+package src;
 
+import src.Request.Request;
 
 public interface RateLimiter {
-    abstract boolean allowRequest(Request request);
+    boolean allowRequest(Request request);
 }
-

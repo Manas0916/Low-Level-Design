@@ -1,3 +1,8 @@
+package src.RateLimiterAlgorithms;
+
+import src.RefillableRateLimiter;
+import src.Request.Request;
+
 import java.util.concurrent.*;
 
 public class LeakyBucket implements RefillableRateLimiter {
@@ -23,7 +28,7 @@ public class LeakyBucket implements RefillableRateLimiter {
     }
 
     public void leak(int leakRate) {
-        for(int i = 0; i < this.leakRate; i++) {
+        for(int i = 0; i < leakRate; i++) {
             Request req = queue.poll();
 
             if(req == null)
