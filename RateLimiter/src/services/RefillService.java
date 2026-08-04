@@ -24,7 +24,6 @@ public class RefillService {
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     private void run() {
@@ -38,8 +37,5 @@ public class RefillService {
             System.out.println(e.getMessage());
             Thread.currentThread().interrupt();
         }
-
     }
-
-
 }
